@@ -54,7 +54,7 @@ def deploy_step(ctx):
         'docker stop {} || true'.format(DOCKER_CONTAINER_NAME),
         'docker rm {} || true'.format(DOCKER_CONTAINER_NAME),
 
-        'docker run -d --name {} -p 80:80 ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/{}:{}'.format(DOCKER_CONTAINER_NAME, repo, tag)
+        'docker run -d --name {} -p 8000:8000 ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/{}:{}'.format(DOCKER_CONTAINER_NAME, repo, tag)
       ]
     },
   }
